@@ -8,12 +8,12 @@
     
 </head>
 <body>
-    <!--각 버튼을 클릭하여 img 태그의 width, height   -->
+    <!--각 버튼을 클릭하여 img 태그의 width, height -->
     <button type="button" class = "sizeBtn" data-size = "320x240">320x240</button>
     <button type="button" class = "sizeBtn" data-size = "640x480">640x480</button>
     <button type="button" class = "sizeBtn" data-size = "800x600">800x600</button>
 
-    <img src="1.png" id="img">
+    <img src="1.png" id="img" style="display: block;">
 
     <script>
         const btns = document.querySelectorAll('.sizeBtn');
@@ -22,12 +22,12 @@
         for(let btn of btns){
             // btns의 값들을 가져옴 즉 태그 전체
             let width = btn.dataset.size.substring(0,3)
-            let heignt = btn.dataset.size.substring(4,7)
+            let height = btn.dataset.size.substring(4,7)
             btn.addEventListener('click', e => {
                 console.log(width)
-                console.log(heignt);
+                console.log(height);
                 img.style.width = `${width}px`;
-                img.style.width = `${heignt}px`;
+                img.style.height = `${height}px`;
             })
         }
     </script>
