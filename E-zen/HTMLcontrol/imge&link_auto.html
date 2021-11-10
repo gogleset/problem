@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .box a {
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+        .box a img {
+            display: block;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 아래와 같은 순서대로 순환되며 변환되어야 합니다. 1.Png -> 2.png -> 3.png -> 1.png -> 2.png -> 3.png
+        이동할 페이지 주소는 각각 네이버, 다음, 구글로 하고 이미지 파일은 각자 취향
+    -->
+
+    <!-- <a href="페이지주소" id = "bannerLink"><img src="1.png" id="bannerImg"></a> -->
+    <div class="container">
+        <div class="box">
+            <a href="http://www.naver.com" id = "bannerLink" target="_blank">
+                <img src='1.png' id="bannerImg">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const potal = ['http://www.naver.com', 'http://www.daum.net', 'http://www.google.com']
+        const imgs = ['1.png', '2.png', '3.png']
+        
+        const link = document.getElementById("bannerLink")
+        const img = document.getElementById("bannerImg")
+
+        let count = 0;
+        setInterval(() => {
+            count++
+            
+            link.setAttribute("href", potal[count]);
+            img.setAttribute("src", count + 1 + ".png")
+            console.log(count);
+            if (count > 1) {
+                count = -1;
+            }
+            
+        }, 3000)        
+        
+        // setAttribute는 속성값 변경
+        // target.setAttribute("alt", title);
+    </script>
+</body>
+</html>

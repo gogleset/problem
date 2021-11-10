@@ -32,7 +32,7 @@
 
 // 100~200사이의 임의의 숫자를 number 라는 변수에 저장하고, 1부터 number까지의 수 중에서 3의 배수에 대한 총 합을 구하시오.
 
-// let number = 140;
+// let number = 130;
 // sum = 0;
 // for(let i = 1; i < number + 1; i++){
 //     if(i % 3 === 0){
@@ -184,12 +184,14 @@ class Student {
 
 
 const c = new Student();
-c.some = 60;
-c.some = 70;
-c.some = 60;
-c.some = 100;
+c.some = 82;
+c.some = 76;
+c.some = 91;
+c.some = 98;
+c.some = 64;
 
-// c.getSumAvg();
-// c.getMinMax();
-// c.getVar();
+
+c.getSumAvg();
+c.getMinMax();
+c.getVar();
 c.getStd();

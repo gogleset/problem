@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!--각 버튼을 클릭하여 img 태그의 width, height   -->
+    <button type="button" class = "sizeBtn" data-size = "320x240">320x240</button>
+    <button type="button" class = "sizeBtn" data-size = "640x480">640x480</button>
+    <button type="button" class = "sizeBtn" data-size = "800x600">800x600</button>
+
+    <img src="1.png" id="img">
+
+    <script>
+        const btns = document.querySelectorAll('.sizeBtn');
+        const img = document.querySelector('#img')
+
+        for(let btn of btns){
+            // btns의 값들을 가져옴 즉 태그 전체
+            let width = btn.dataset.size.substring(0,3)
+            let heignt = btn.dataset.size.substring(4,7)
+            btn.addEventListener('click', e => {
+                console.log(width)
+                console.log(heignt);
+                img.style.width = `${width}px`;
+                img.style.width = `${heignt}px`;
+            })
+        }
+    </script>
+</body>
+</html> 

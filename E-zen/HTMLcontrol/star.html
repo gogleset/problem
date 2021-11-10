@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .console{
+            width:300px;
+            background-color:rgb(255, 255, 255);
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 아래와 같이 버튼이 존재할때 각 버튼을 클릭하여 별찍기의 행 수가 변경되도록 구현해 보세요 -->
+    <button type="button" class="startBtn" data-line="5">5행</button>
+    <button type="button" class="startBtn" data-line="10">10행</button>
+    <button type="button" class="startBtn" data-line="15">15행</button>
+
+    <div class="console"></div>
+
+    <script>
+        const btns = document.querySelectorAll('.startBtn');
+        const consoles = document.querySelector('.console');
+
+        for (let btn of btns){
+            btn.addEventListener('click', e => {
+                const line = e.currentTarget.dataset.line;
+
+                consoles.innerHTML = "";
+                if(line === "5"){
+                    let str = ""
+                    for (let i = 0; i < Number(line); i++) { //바깥의 반복문이 행을 담당 --> 7개의 행이 생성된다. 공식이니 꼭 기억!
+                        let str = "";
+                        for(let j = 0; j < i+1; j++){ //안쪽의 반복문이 열을 담당. 공식이니 꼭 기억!!!
+                            str += "*";
+                        }
+                        str += "<br>";
+                        consoles.innerHTML += str
+                        console.log(str);
+                    }
+                } else if(line === "10"){
+                    let str = ""
+                    for (let i = 0; i < Number(line); i++) { //바깥의 반복문이 행을 담당 --> 7개의 행이 생성된다. 공식이니 꼭 기억!
+                        let str = "";
+                        for(let j = 0; j < i+1; j++){ //안쪽의 반복문이 열을 담당. 공식이니 꼭 기억!!!
+                            str += "*";
+                        }
+                        str += "<br>";
+                        consoles.innerHTML += str
+                        console.log(str);
+                    }
+                } else if(line === "15"){
+                    let str = ""
+                    for (let i = 0; i < Number(line); i++) { //바깥의 반복문이 행을 담당 --> 7개의 행이 생성된다. 공식이니 꼭 기억!
+                        let str = "";
+                        for(let j = 0; j < i+1; j++){ //안쪽의 반복문이 열을 담당. 공식이니 꼭 기억!!!
+                            str += "*";
+                        }
+                        str += "<br>";
+                        consoles.innerHTML += str
+                        console.log(str);
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>
