@@ -21,14 +21,25 @@
 
         for(let btn of btns){
             // btns의 값들을 가져옴 즉 태그 전체
-            let width = btn.dataset.size.substring(0,3)
-            let height = btn.dataset.size.substring(4,7)
+            // let width = btn.dataset.size.substring(0,3)
+            // let height = btn.dataset.size.substring(4,7)
+            // 내 답
+
+            const p = btn.dataset.size.indexOf('x')
+            const width = btn.dataset.size.substring(0, p);
+            const height = btn.dataset.size.substring(p+1);
+
             btn.addEventListener('click', e => {
-                console.log(width)
-                console.log(height);
-                img.style.width = `${width}px`;
-                img.style.height = `${height}px`;
-            })
+                // console.log(width)
+                // console.log(height);
+                // img.style.width = `${width}px`;
+                // img.style.height = `${height}px`;
+                // 내답
+
+                
+                img.style.width = width + "px";
+                img.style.height = height + "px";
+            });
         }
     </script>
 </body>

@@ -28,43 +28,19 @@
         for (let btn of btns){
             btn.addEventListener('click', e => {
                 const line = e.currentTarget.dataset.line;
-
                 consoles.innerHTML = "";
-                if(line === "5"){
-                    let str = ""
-                    for (let i = 0; i < Number(line); i++) { //바깥의 반복문이 행을 담당 --> 7개의 행이 생성된다. 공식이니 꼭 기억!
-                        let str = "";
-                        for(let j = 0; j < i+1; j++){ //안쪽의 반복문이 열을 담당. 공식이니 꼭 기억!!!
-                            str += "*";
+                let str = ""
+
+                for (let i = 0; i < Number(line); i++) { //바깥의 반복문이 행을 담당 --> 7개의 행이 생성된다. 공식이니 꼭 기억!
+                    let str = "";
+                    for(let j = 0; j < i+1; j++){ //안쪽의 반복문이 열을 담당. 공식이니 꼭 기억!!!
+                    str += "*";
                         }
                         str += "<br>";
                         consoles.innerHTML += str
                         console.log(str);
                     }
-                } else if(line === "10"){
-                    let str = ""
-                    for (let i = 0; i < Number(line); i++) { //바깥의 반복문이 행을 담당 --> 7개의 행이 생성된다. 공식이니 꼭 기억!
-                        let str = "";
-                        for(let j = 0; j < i+1; j++){ //안쪽의 반복문이 열을 담당. 공식이니 꼭 기억!!!
-                            str += "*";
-                        }
-                        str += "<br>";
-                        consoles.innerHTML += str
-                        console.log(str);
-                    }
-                } else if(line === "15"){
-                    let str = ""
-                    for (let i = 0; i < Number(line); i++) { //바깥의 반복문이 행을 담당 --> 7개의 행이 생성된다. 공식이니 꼭 기억!
-                        let str = "";
-                        for(let j = 0; j < i+1; j++){ //안쪽의 반복문이 열을 담당. 공식이니 꼭 기억!!!
-                            str += "*";
-                        }
-                        str += "<br>";
-                        consoles.innerHTML += str
-                        console.log(str);
-                    }
-                }
-            })
+            });
         }
     </script>
 </body>
