@@ -13,13 +13,8 @@ let completion = ["stanko", "ana", "mislav"];
 const solution = (participant, completion) => {
   participant.sort();
   let answer = "";
-  for (let i = 0; i < participant.length; i++) {
-    if(participant[i] === participant[i+1]){
-        answer += participant[i];
-    } else if (participant[i].length < completion[0].length) {
-        answer += participant[i];
-    }
-}
+  
+  
   return console.log(
     `${answer}는 참여자 명단에는 있지만, 완주자 명단에는 없기 때문에 완주하지 못했습니다.`
   );
